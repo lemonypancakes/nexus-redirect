@@ -11,35 +11,7 @@
             color: #ddd;
             font-family: monospace;
         }
-        .code-box {
-            background-color: #333;
-            color: #fff;
-            white-space: pre-wrap;
-            overflow-x: auto;
-            position: relative;
-        }
-        .copy-button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: #555;
-            color: #fff;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-size: 12px;
-        }
     </style>
-    <script>
-        function copyToClipboard(button) {
-            const code = button.parentElement.querySelector("code").innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                button.innerText = "Copied!";
-                setTimeout(() => { button.innerText = "Copy"; }, 2000);
-            });
-        }
-    </script>
 </head>
 <body>
     <pre>
@@ -50,35 +22,6 @@ https://repo.lemonypancakes.me/
 
 Requests are redirected to:
 https://repo.codemc.io/repository/lemonypancakes/
-
-Maven Usage:
     </pre>
-    <div class="code-box">
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
-        <code>
-&lt;repository&gt;
-    &lt;id&gt;lemonypancakes-repo&lt;/id&gt;
-    &lt;url&gt;https://repo.lemonypancakes.me/&lt;/url&gt;
-&lt;/repository&gt;
-        </code>
-    </div>
-    
-    <pre>Gradle (Groovy DSL) Usage:</pre>
-    <div class="code-box">
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
-        <code>
-maven {
-    url = uri("https://repo.lemonypancakes.me/")
-}
-        </code>
-    </div>
-    
-    <pre>Gradle (Kotlin DSL) Usage:</pre>
-    <div class="code-box">
-        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
-        <code>
-maven("https://repo.lemonypancakes.me/")
-        </code>
-    </div>
 </body>
 </html>
