@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Proxy</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.location.pathname !== "/") {
+                window.location.href = "https://repo.codemc.io/repository/lemonypancakes" + window.location.pathname;
+            }
+        });
+    </script>
+</head>
+<body>
+    <pre>
+Repository Proxy - repo.lemonypancakes.me
+
+Use this URL for accessing hosted artifacts:
+https://repo.lemonypancakes.me/
+
+Requests are redirected to:
+https://repo.codemc.io/repository/lemonypancakes/
+    </pre>
+</body>
+</html>
