@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Repository Redirect</title>
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/27a1.svg" type="image/svg+xml">
+    <style>
+        body {
+            background-color: #222;
+            color: #ddd;
+            font-family: monospace;
+            padding: 20px;
+        }
+        .code-box {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+    <script>
+        function copyToClipboard(element) {
+            navigator.clipboard.writeText(element.nextElementSibling.textContent);
+        }
+    </script>
 </head>
 <body>
     <pre>
@@ -15,6 +49,29 @@ https://repo.lemonypancakes.me/
 
 Requests are redirected to:
 https://repo.codemc.io/repository/lemonypancakes/
+
+Maven Usage:
     </pre>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+&lt;repository&gt;
+    &lt;id&gt;lemonypancakes-repo&lt;/id&gt;
+    &lt;url&gt;https://repo.lemonypancakes.me/&lt;/url&gt;
+&lt;/repository&gt;
+    </div>
+    
+    <pre>Gradle (Groovy DSL) Usage:</pre>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+maven {
+    url = uri("https://repo.lemonypancakes.me/")
+}
+    </div>
+    
+    <pre>Gradle (Kotlin DSL) Usage:</pre>
+    <div class="code-box">
+        <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+maven("https://repo.lemonypancakes.me/")
+    </div>
 </body>
 </html>
